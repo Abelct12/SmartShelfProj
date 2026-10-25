@@ -21,6 +21,7 @@ wheels/
 .installed.cfg
 *.egg
 .pytest_cache/
+food_shelf_life.db
 
 # Node
 node_modules/
