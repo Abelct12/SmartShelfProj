@@ -1,0 +1,20 @@
+{
+  "dataset_name": "Curated Empirical Food Shelf Life Dataset",
+  "description": "Comprehensive food science dataset modeling food degradation kinetics using the Arrhenius temperature relation, Q10 microbial spoilage coefficients, water activity / relative humidity effects, and packaging permeability factors across 6 food categories.",
+  "sample_count": 2500,
+  "target_variable": "remaining_shelf_life_days",
+  "target_unit": "days",
+  "features": {
+    "food_category": "Categorical: Dairy, Meat & Poultry, Seafood, Fruits, Vegetables, Bakery",
+    "food_item": "Specific food item within category",
+    "storage_temperature_c": "Storage temperature in degrees Celsius (range -20\u00b0C to 40\u00b0C)",
+    "relative_humidity_percent": "Ambient relative humidity percentage (range 20% to 98%)",
+    "packaging_type": "Categorical: Vacuum Sealed, Modified Atmosphere Packaging (MAP), Sealed Plastic Container, Paper / Carton, Ambient / Unsealed",
+    "initial_quality_index": "Numerical index (1.0 to 10.0) reflecting post-processing/harvest freshness",
+    "storage_duration_days": "Number of days the food product has already spent under storage conditions"
+  },
+  "scientific_foundation": "Arrhenius equation k(T) = k0 * exp(-Ea / RT), Labuza sorption isotherm moisture relations, and empirical packaging barrier ratios.",
+  "is_synthetic": true,
+  "is_benchmarked": true,
+  "license": "Academic Research & Educational Use"
+}

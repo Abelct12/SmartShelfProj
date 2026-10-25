@@ -1,0 +1,165 @@
+{
+  "model_version": "1.0.0",
+  "model_name": "Gradient Boosting",
+  "selected_algorithm": "GradientBoostingRegressor",
+  "dataset_path": "data/raw/food_shelf_life_dataset.csv",
+  "dataset_samples_total": 2500,
+  "train_samples": 2000,
+  "test_samples": 500,
+  "dropped_missing_samples": 0,
+  "train_test_split_ratio": "80/20",
+  "random_state": 42,
+  "training_timestamp": "2026-10-15T21:43:27.093506",
+  "numerical_features": [
+    "storage_temperature_c",
+    "relative_humidity_percent",
+    "initial_quality_index",
+    "storage_duration_days"
+  ],
+  "categorical_features": [
+    "food_category",
+    "packaging_type"
+  ],
+  "target_column": "remaining_shelf_life_days",
+  "evaluation_metrics": {
+    "cv_mae": 2.7979,
+    "cv_rmse": 8.8617,
+    "cv_r2": 0.5675,
+    "test_mae": 2.2426,
+    "test_rmse": 6.1433,
+    "test_r2": 0.8045
+  },
+  "all_model_comparisons": {
+    "Linear Regression": {
+      "cv_mae": 5.9228,
+      "cv_rmse": 12.4529,
+      "cv_r2": 0.2173,
+      "test_mae": 5.1361,
+      "test_rmse": 12.5267,
+      "test_r2": 0.1871
+    },
+    "Ridge Regression": {
+      "cv_mae": 5.9204,
+      "cv_rmse": 12.4524,
+      "cv_r2": 0.2174,
+      "test_mae": 5.1367,
+      "test_rmse": 12.5279,
+      "test_r2": 0.1869
+    },
+    "Random Forest": {
+      "cv_mae": 2.8536,
+      "cv_rmse": 9.035,
+      "cv_r2": 0.5559,
+      "test_mae": 2.4348,
+      "test_rmse": 7.1977,
+      "test_r2": 0.7316
+    },
+    "Gradient Boosting": {
+      "cv_mae": 2.7979,
+      "cv_rmse": 8.8617,
+      "cv_r2": 0.5675,
+      "test_mae": 2.2426,
+      "test_rmse": 6.1433,
+      "test_r2": 0.8045
+    }
+  },
+  "feature_importances": [
+    {
+      "feature": "storage_temperature_c",
+      "importance": 0.4401
+    },
+    {
+      "feature": "storage_duration_days",
+      "importance": 0.2014
+    },
+    {
+      "feature": "packaging_type_Vacuum Sealed",
+      "importance": 0.0853
+    },
+    {
+      "feature": "packaging_type_Modified Atmosphere Packaging (MAP)",
+      "importance": 0.0694
+    },
+    {
+      "feature": "food_category_Seafood",
+      "importance": 0.0592
+    },
+    {
+      "feature": "initial_quality_index",
+      "importance": 0.0262
+    },
+    {
+      "feature": "food_category_Fruits",
+      "importance": 0.0244
+    },
+    {
+      "feature": "food_category_Meat & Poultry",
+      "importance": 0.022
+    },
+    {
+      "feature": "food_category_Dairy",
+      "importance": 0.0207
+    },
+    {
+      "feature": "relative_humidity_percent",
+      "importance": 0.0206
+    },
+    {
+      "feature": "packaging_type_Ambient / Unsealed",
+      "importance": 0.0117
+    },
+    {
+      "feature": "food_category_Bakery",
+      "importance": 0.0106
+    },
+    {
+      "feature": "packaging_type_Paper / Carton",
+      "importance": 0.0035
+    },
+    {
+      "feature": "packaging_type_Sealed Plastic Container",
+      "importance": 0.0031
+    },
+    {
+      "feature": "food_category_Vegetables",
+      "importance": 0.0017
+    }
+  ],
+  "supported_categories": [
+    "Bakery",
+    "Dairy",
+    "Fruits",
+    "Meat & Poultry",
+    "Seafood",
+    "Vegetables"
+  ],
+  "supported_packaging": [
+    "Ambient / Unsealed",
+    "Modified Atmosphere Packaging (MAP)",
+    "Paper / Carton",
+    "Sealed Plastic Container",
+    "Vacuum Sealed"
+  ],
+  "feature_summary": {
+    "temperature_range_c": [
+      -17.8,
+      37.9
+    ],
+    "humidity_range_percent": [
+      20.0,
+      98.0
+    ],
+    "quality_range": [
+      6.0,
+      10.0
+    ],
+    "storage_duration_max_days": 283.4,
+    "remaining_shelf_life_mean_days": 5.66
+  },
+  "academic_limitations": [
+    "Predictions are statistical approximations based on kinetic and microbial spoilage models; they do not replace regulatory microbiological laboratory analysis.",
+    "Predictions assume steady-state storage temperature and relative humidity over the storage duration.",
+    "Extreme conditions far beyond training ranges (-20\u00b0C to 40\u00b0C) may lead to extrapolation uncertainty.",
+    "Cross-contamination, physical damage, and anaerobic pathogen outgrowth (e.g., Clostridium botulinum in defective vacuum packs) are not modeled."
+  ]
+}
